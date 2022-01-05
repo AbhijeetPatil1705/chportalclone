@@ -1,1 +1,15 @@
-<p>login works!</p>
+
+<body>
+<div class="loginbox">
+    <h1>SNOC Service Manager</h1>
+    <h5>You have been logged out due to session timeout.</h5><br>
+    <form #userForm = "ngForm">
+
+    <input type="text"  name="username" 
+    ngModel placeholder="  Username"><br>
+        <input type="password" name="password" ngModel placeholder="  Password"><br>
+        <input type="submit" name="submit" value="Login">
+        <input type="button" name="button"  value="Forget Password">
+    </form>
+</div>
+</body>
