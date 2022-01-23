@@ -1,0 +1,84 @@
+<header>
+    <mat-toolbar color="primary">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+          </button>
+          <span>SNOC Service Manager</span>
+          <span class="example-spacer"></span>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+          </button>
+          
+           
+            <button mat-icon-button class="example-icon account_circle" aria-label="Example icon-button with Login icon">
+                <mat-icon [matMenuTriggerFor]="appMenu">account_circle</mat-icon>
+              </button>
+              
+              <mat-menu #appMenu="matMenu">
+                <button mat-menu-item>Change Password</button>
+                <button mat-menu-item>Logout</button>
+              </mat-menu>
+            
+              
+        </mat-toolbar>
+
+        <mat-sidenav-container>
+            <mat-sidenav #sidenav opened="true" mode="side" style="background-color:rgb(236, 232, 232);">
+                <mat-nav-list style="color: white;">
+                    <a mat-list-item><mat-icon>dashboard</mat-icon>Favorites and Dashboards</a>
+                    <a mat-list-item [matMenuTriggerFor]="changeMenu"><mat-icon >edit</mat-icon>Change Management</a>
+                  
+                    <a mat-list-item><mat-icon>perm_contact_calendar</mat-icon>Configuration Management</a>
+                    <a mat-list-item><mat-icon> rate_review</mat-icon>Customer Feedback Modules</a>
+                    <a mat-list-item><mat-icon>device_unknown</mat-icon>Incident Management</a>
+                    <a mat-list-item><mat-icon>fiber_smart_record</mat-icon>Knowledge Management</a>
+                    <a mat-list-item><mat-icon>report_problem</mat-icon>Problem Management</a>
+                    <a mat-list-item><mat-icon>headset</mat-icon>Service Desk</a>
+                    <a mat-list-item><mat-icon>view_compact</mat-icon>Software Governance Portal</a>
+                    <a mat-list-item><mat-icon>account_box</mat-icon>User Administration</a>
+                    <a mat-list-item><mat-icon>developer_board</mat-icon>Miscellancous</a>
+                </mat-nav-list>
+                <mat-menu #changeMenu="matMenu">
+                  <button mat-menu-item [matMenuTriggerFor]="configurationMenu">Configuration</button>
+                  <button mat-menu-item>Change Queue</button>
+                  <button mat-menu-item>Create New Change</button>
+                  <button mat-menu-item>Search Changes</button>
+                </mat-menu>
+
+                <mat-menu #configurationMenu="matMenu">
+                  <button mat-menu-item>Change Categories</button>
+                  <button mat-menu-item>Change Location</button>
+                </mat-menu>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <div style="height: 88vh;"></div>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    
+     
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>

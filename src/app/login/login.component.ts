@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,13 @@ export class LoginComponent implements OnInit {
 
  submit(newUserForm:any){
    if(newUserForm.valid) {
-    alert("Form Successfully Submitted");
+    this.router.navigateByUrl('/home');
    } else {
      alert("Error")
    }
  }
   
- 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     
