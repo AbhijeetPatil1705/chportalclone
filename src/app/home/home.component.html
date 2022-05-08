@@ -18,8 +18,8 @@
               </button>
               
               <mat-menu #appMenu="matMenu">
-                <button mat-menu-item>Change Password</button>
-                <button mat-menu-item>Logout</button>
+                <button mat-menu-item>	<mat-icon> rate_review</mat-icon>Change Password</button>
+                <button  mat-menu-item><mat-icon>power_settings_new</mat-icon>Logout</button>
               </mat-menu>
             
               
@@ -31,27 +31,79 @@
                     <a mat-list-item><mat-icon>dashboard</mat-icon>Favorites and Dashboards</a>
                     <a mat-list-item [matMenuTriggerFor]="changeMenu"><mat-icon >edit</mat-icon>Change Management</a>
                   
-                    <a mat-list-item><mat-icon>perm_contact_calendar</mat-icon>Configuration Management</a>
-                    <a mat-list-item><mat-icon> rate_review</mat-icon>Customer Feedback Modules</a>
-                    <a mat-list-item><mat-icon>device_unknown</mat-icon>Incident Management</a>
-                    <a mat-list-item><mat-icon>fiber_smart_record</mat-icon>Knowledge Management</a>
-                    <a mat-list-item><mat-icon>report_problem</mat-icon>Problem Management</a>
-                    <a mat-list-item><mat-icon>headset</mat-icon>Service Desk</a>
-                    <a mat-list-item><mat-icon>view_compact</mat-icon>Software Governance Portal</a>
-                    <a mat-list-item><mat-icon>account_box</mat-icon>User Administration</a>
-                    <a mat-list-item><mat-icon>developer_board</mat-icon>Miscellancous</a>
+                    <a mat-list-item [matMenuTriggerFor]="configManage"><mat-icon>perm_contact_calendar</mat-icon>Configuration Management</a>
+                    <a mat-list-item [matMenuTriggerFor]="customerFeedback"><mat-icon> rate_review</mat-icon>Customer Feedback Modules</a>
+                    <a mat-list-item [matMenuTriggerFor]="incidentManagement"><mat-icon>device_unknown</mat-icon>Incident Management</a>
+                    <a mat-list-item [matMenuTriggerFor]="knowledgeBase"><mat-icon>fiber_smart_record</mat-icon>Knowledge Management</a>
+                    <a mat-list-item [matMenuTriggerFor]="problmeManage"><mat-icon>report_problem</mat-icon>Problem Management</a>
+                    <a mat-list-item [matMenuTriggerFor]="serviceDesk"><mat-icon>headset</mat-icon>Service Desk</a>
+                    <a mat-list-item [matMenuTriggerFor]="softwarePortal"><mat-icon>view_compact</mat-icon>Software Governance Portal</a>
+                    <a mat-list-item [matMenuTriggerFor]="accountBox"><mat-icon>account_box</mat-icon>User Administration</a>
+                    <a mat-list-item [matMenuTriggerFor]="miscellancous"><mat-icon>developer_board</mat-icon>Miscellancous</a>
                 </mat-nav-list>
                 <mat-menu #changeMenu="matMenu">
-                  <button mat-menu-item [matMenuTriggerFor]="configurationMenu">Configuration</button>
-                  <button mat-menu-item>Change Queue</button>
-                  <button mat-menu-item>Create New Change</button>
-                  <button mat-menu-item>Search Changes</button>
+                  <a mat-menu-item [matMenuTriggerFor]="configurationMenu">Configuration</a>
+                  <a mat-menu-item>Change Queue</a>
+                  <a mat-menu-item>Create New Change</a>
+                  <a mat-menu-item>Search Changes</a>
                 </mat-menu>
 
                 <mat-menu #configurationMenu="matMenu">
-                  <button mat-menu-item>Change Categories</button>
-                  <button mat-menu-item>Change Location</button>
+                  <a mat-menu-item>Change Categories</a>
+                  <a mat-menu-item>Change Location</a>
                 </mat-menu>
+
+                <mat-menu #miscellancous="matMenu">
+                  <a mat-menu-item>Approval Delegation</a>
+                  <a mat-menu-item>Approval Inbox</a>
+                  <a mat-menu-item>Password Changed</a>
+                  <a mat-menu-item>To Do Queue</a>
+                </mat-menu>
+              
+                <mat-menu #accountBox="matMenu">
+                  <a mat-menu-item>My menu</a>
+                </mat-menu>
+
+                <mat-menu #configManage="matMenu">
+                  <a mat-menu-item>Search CI</a>
+                </mat-menu>
+
+                <mat-menu #incidentManagement="matMenu">
+                  <a mat-menu-item>Create New Incident</a>
+                  <a mat-menu-item>Incident Queue</a>
+                  <a mat-menu-item>Search Incident</a>
+                </mat-menu>
+
+                <mat-menu #knowledgeBase="matMenu">
+                  <a mat-menu-item>Contribute Knowledge</a>
+                  <a mat-menu-item>Draft Documents</a>
+                  <a mat-menu-item>Search KnowledgeBase</a>
+                </mat-menu>
+
+                <mat-menu #problmeManage="matMenu">
+                  <a mat-menu-item>Create New Problem</a>
+                  <a mat-menu-item>Problem Known Error Queue</a>
+                  <a mat-menu-item>Search Problem</a>
+                </mat-menu>
+
+                <mat-menu #serviceDesk="matMenu">
+                  <a mat-menu-item>Create New Intraction</a>
+                  <a mat-menu-item>Intraction Queue</a>
+                  <a mat-menu-item>Search Interaction</a>
+                </mat-menu>
+
+                <mat-menu #softwarePortal="matMenu">
+                  <a mat-menu-item>Request Queue</a>
+                  <a mat-menu-item>Search Request</a>
+                  <a mat-menu-item>Submit Request</a>
+                </mat-menu>
+
+                <mat-menu #customerFeedback="matMenu">
+                  <a mat-menu-item>Feedback Queue</a>
+                  <a mat-menu-item>Search Feedback</a>
+                  <a mat-menu-item>Submit Feedback</a>
+                </mat-menu>
+
             </mat-sidenav>
             <mat-sidenav-content>
                 <div style="height: 88vh;"></div>

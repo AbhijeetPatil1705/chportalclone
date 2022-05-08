@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatModule } from './mat.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { MatModule } from './mat.module';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatModule
+    MatModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
