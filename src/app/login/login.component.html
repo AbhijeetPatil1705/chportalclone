@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div class="loginbox">
+    <h1>SNOC Service Manager</h1>
+    <h5>You have been logged out due to session timeout.</h5><br>
+    <form #newUserForm="ngForm" (ngSubmit)="submit(newUserForm)">
+    
+     <input type="text" placeholder=" Username" style="color:white" minlength="2" maxlength="12" pattern="Admin123"
+          [(ngModel)]="userName" required name="userName" #pickedName="ngModel" autocomplete="off"><br>
+
+      <div *ngIf="!pickedName.valid && pickedName.touched" >
+         <span class="text-danger" *ngIf="pickedName.errors && pickedName.errors['required']"> Username is required</span>
+         <span style="color: red;"*ngIf="pickedName.errors && pickedName.errors['minlength']">Username must be min 2 and max 12 character</span>
+         <span style="color: red;"*ngIf="pickedName.errors && pickedName.errors['pattern']"> Username Invalid</span>
+       </div>
+      
+
+      <input type="password" name=" password" style="color:white" minlength="2" maxlength="12" pattern="Admin123"
+            placeholder="  Password" required [(ngModel)]="password" #userPassword="ngModel"><br>
+     
+      <div *ngIf="!userPassword.valid && userPassword.touched">
+         <span class="text-danger" *ngIf="userPassword.errors && userPassword.errors['required']">Password is must required</span>
+         <span style ="color: red;" *ngIf="userPassword.errors && userPassword.errors['minlength']">Password must be min 2 and max 12 character</span>
+         <span style ="color: red;" *ngIf="userPassword.errors && userPassword.errors['pattern']"> Password Invalid</span>
+      </div>
+      
+      
+    
+      <input type="submit" name="submit" value="Login">
+      <input type="button" name="button" value="Forget Password">
+</form>
+    
+  </div>
+</body>
+</html>
+
